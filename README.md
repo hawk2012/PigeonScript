@@ -10,7 +10,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/pigeonscript.git
+   git clone [https://github.com/yourusername/pigeonscript.git](https://github.com/hawk2012/PigeonScript.git)
    cd pigeonscript
    ```
 
