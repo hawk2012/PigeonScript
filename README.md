@@ -1,25 +1,29 @@
-# **PigeonScript 🕊️**
-
-**PigeonScript** is a humorous programming language inspired by the behavior of pigeons. It uses pigeon sounds and actions to describe program logic. This project includes:
-1. A **translation table** from JavaScript to PigeonScript.
-2. A **translator module** that converts simple JavaScript code into PigeonScript.
+Конечно! Вот **полностью переведённая и адаптированная под нашу версию "Голубиного языка"** README-документация на русском языке:
 
 ---
 
-## **How to Use**
+# **PigeonScript 🐦**
 
-1. Clone the repository:
+**PigeonScript** — это юмористический язык программирования, вдохновлённый поведением голубей. Он использует птичьи звуки, действия и метафоры для описания логики программы. Этот проект включает:
+1. **Таблицу перевода** из JavaScript в PigeonScript.
+2. **Модуль перевода**, который преобразует простой JavaScript-код в «голубиную» форму.
+
+---
+
+## **Как использовать**
+
+1. Склонируйте репозиторий:
    ```bash
-   git clone https://github.com/hawk2012/PigeonScript.git
+   git clone https://github.com/hawk2012/PigeonScript.git  
    cd pigeonscript
    ```
 
-2. Install dependencies:
+2. Установите зависимости:
    ```bash
    npm install
    ```
 
-3. Translate your JavaScript code into PigeonScript:
+3. Переведите ваш JavaScript-код в PigeonScript:
    ```javascript
    const translator = require('./pigeonscript-translator');
 
@@ -36,7 +40,7 @@
    console.log(pigeonCode);
    ```
 
-4. Get the result:
+4. Получите результат:
    ```pigeon
    variable crumbs = 0;
    while (crumbs < 5) {
@@ -44,28 +48,29 @@
        crumbs = crumbs + 1;
    }
    say("yum-coo-coo!");
+   say("gool-gool!");
    ```
 
 ---
 
-## **Translation Table: JavaScript → PigeonScript**
+## **Таблица соответствий: JavaScript → PigeonScript**
 
-| JavaScript                     | PigeonScript                          | Description                                                                 |
-|--------------------------------|---------------------------------------|-----------------------------------------------------------------------------|
-| `let x = 0;`                   | `variable crumbs = 0;`               | Declare a variable. Use food (crumbs, bread) instead of names.              |
-| `if (condition) { ... }`       | `if (see_person()) { ... }`          | Check if a person or food is nearby.                                       |
-| `while (x < 10) { ... }`       | `while (crumbs < 10) { ... }`        | Loop continues as long as the condition is true.                           |
-| `console.log("text");`         | `say("coo-coo!");`                   | Output a message to the console using pigeon communication.                |
-| `function eat() { ... }`       | `function eat_crumbs(amount)`        | Declare a function.                                                         |
-| `return value;`                | `return crumbs;`                     | Return a value from a function.                                             |
-| `for (let i = 0; i < n;)`      | `while (i < n) { circle(i); }`       | Replace `for` loops with `while` and "circling" actions.                    |
-| `try { ... } catch { ... }`    | `try { ... } catch (cat) { }`        | Handle exceptions through encounters with cats.                            |
+| JavaScript                     | PigeonScript                          | Описание                                                                 |
+|--------------------------------|---------------------------------------|--------------------------------------------------------------------------|
+| `let x = 0;`                   | `variable crumbs = 0;`               | Объявление переменной. Используется еда (крошки, хлеб).                   |
+| `if (condition) { ... }`       | `if (see_person()) { ... }`          | Проверяет, есть ли рядом человек или крошка.                             |
+| `while (x < 10) { ... }`       | `while (crumbs < 10) { ... }`        | Цикл работает, пока условие истинно.                                     |
+| `console.log("text");`         | `say("coo-coo!");`                   | Вывод сообщения через воркование.                                        |
+| `function eat() { ... }`       | `function eat_crumbs(amount)`        | Объявляет функцию.                                                       |
+| `return value;`                | `return crumbs;`                     | Возвращает значение из функции.                                           |
+| `for (let i = 0; i < n;)`      | `while (i < n) { circle(i); }`       | Заменить `for` на `while` с действием "облетать".                        |
+| `try { ... } catch { ... }`    | `try { ... } catch (cat) { }`        | Обработка исключений через встречи с кошкой.                             |
 
 ---
 
-## **Examples**
+## **Примеры**
 
-### Original JavaScript:
+### Исходный JavaScript:
 ```javascript
 let food = 0;
 while (food < 3) {
@@ -75,7 +80,7 @@ while (food < 3) {
 console.log("Found enough food!");
 ```
 
-### Translated PigeonScript:
+### Переведённый PigeonScript:
 ```pigeon
 variable crumbs = 0;
 while (crumbs < 3) {
@@ -88,28 +93,28 @@ say("gool-gool!");
 
 ---
 
-## **Translator Module**
+## **Модуль перевода**
 
-The translator module uses regular expressions and basic rules to convert JavaScript into PigeonScript. Here's how it works:
+Модуль перевода использует регулярные выражения и базовые правила для преобразования JavaScript-кода в PigeonScript. Вот как он работает:
 
-### File: `pigeonscript-translator.js`
+### Файл: `pigeonscript-translator.js`
 
 ```javascript
 module.exports = {
     translate: function (jsCode) {
-        // 1. Replace `let` with "variable"
+        // 1. Замена `let` на "variable"
         jsCode = jsCode.replace(/let\s+(\w+)\s*=\s*(\d+);/g, 'variable $1 = $2;');
 
-        // 2. Replace `console.log` with "say"
+        // 2. Замена `console.log` на "say"
         jsCode = jsCode.replace(/console\.log\("([^"]+)"\);/g, 'say("$1");');
 
-        // 3. Replace `while` with "while"
+        // 3. Замена `while` на "while"
         jsCode = jsCode.replace(/while\s*\(([^)]+)\)\s*\{/g, 'while ($1) {');
 
-        // 4. Replace `++` with "increase by 1"
+        // 4. Замена `++` на "увеличить на 1"
         jsCode = jsCode.replace(/(\w+)\+\+/g, '$1 = $1 + 1;');
 
-        // 5. Add pigeon comments
+        // 5. Добавление голубиных комментариев
         jsCode = jsCode.replace(/\};/g, '}\nsay("gool-gool!");');
 
         return jsCode;
@@ -119,7 +124,7 @@ module.exports = {
 
 ---
 
-## **Examples**
+## **Примеры кода**
 
 #### `example1.js`
 ```javascript
@@ -144,19 +149,20 @@ say("gool-gool!");
 
 ---
 
-## **Contribution**
+## **Как принять участие в проекте**
 
-If you'd like to contribute to this project, you can:
-1. Add more translation rules.
-2. Create an interpreter to execute PigeonScript.
-3. Add support for other programming languages.
-
----
-
-## **License**
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Если хотите помочь развивать проект, вы можете:
+1. Добавлять новые правила перевода.
+2. Создать **интерпретатор**, исполняющий PigeonScript.
+3. Добавить поддержку других языков программирования.
+4. Сделать CLI-версию, веб-редактор или даже игру.
 
 ---
 
-I hope you enjoy this project and share it with others! 🕊️
+## **Лицензия**
+
+Проект распространяется под лицензией MIT. Подробности смотрите в файле [LICENSE](LICENSE).
+
+---
+
+Надеюсь, вам понравится этот проект! Делитесь им с друзьями и помогайте делать его ещё смешнее и круче! 🐦✨
